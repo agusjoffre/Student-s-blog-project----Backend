@@ -12,7 +12,7 @@ export const getPosts = async (req, res) => {
 
 export const getOnePost = async (req, res) => {
   try {
-    const post = await PostSchema.findById(req.body.id);
+    const post = await PostSchema.findById(req.params.id);
     res.status(200).json(post);
   } catch (err) {
     res.status(500).json({ message: err });
