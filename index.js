@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import { config } from "dotenv";
 import cors from "cors";
 import router from "./router.js";
+import PostSchema from "./models/PostSchema.js";
 
 config();
 
@@ -23,6 +24,9 @@ async function connect() {
 connect();
 
 app.use("/api", router);
+
+
+
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
